@@ -1,49 +1,77 @@
-/* ... Keep your previous styles ... */
+* { box-sizing: border-box; margin: 0; padding: 0; scroll-behavior: smooth; }
+body { background-color: #0b0c10; color: #c5c6c7; font-family: 'Rajdhani', sans-serif; }
+h1, h2, h3, .logo { font-family: 'Orbitron', sans-serif; }
 
-.input-group-vertical {
-    display: flex;
-    flex-direction: column;
-    text-align: left;
+/* Header & Navigation */
+header {
+    background: #1f2833; padding: 15px 5%;
+    display: flex; justify-content: space-between; align-items: center;
+    border-bottom: 3px solid #66fcf1; position: sticky; top: 0; z-index: 100;
+}
+.logo { color: #fff; font-size: 1.5rem; font-weight: bold; }
+.logo span { color: #66fcf1; }
+
+.top-nav { display: flex; gap: 15px; flex-wrap: wrap; }
+.top-nav a { color: #fff; text-decoration: none; font-size: 0.9rem; font-weight: bold; text-transform: uppercase; }
+.top-nav a:hover { color: #66fcf1; }
+
+/* Hero Section */
+.hero {
+    height: 50vh; display: flex; align-items: center; justify-content: center; text-align: center;
+    background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('https://wallpaperaccess.com/full/1151152.jpg');
+    background-size: cover; padding: 20px;
+}
+.hero h1 { font-size: 2.5rem; color: #66fcf1; margin-bottom: 10px; }
+.hero p { margin-bottom: 20px; font-size: 1.1rem; }
+
+/* Buttons */
+.btn-glow {
+    display: inline-block; padding: 12px 20px; background: #66fcf1;
+    color: #0b0c10; text-decoration: none; font-weight: bold; font-family: 'Rajdhani', sans-serif;
+    border-radius: 4px; border: none; cursor: pointer; transition: 0.3s;
+    text-transform: uppercase; font-size: 1rem;
+}
+.btn-glow:hover { box-shadow: 0 0 15px #66fcf1; }
+
+/* Layout & Containers */
+.container { padding: 40px 5%; text-align: center; }
+.section-title { margin-bottom: 25px; color: #fff; text-transform: uppercase; }
+
+.solid-box {
+    background: #1f2833; padding: 25px; border-radius: 8px;
+    max-width: 500px; margin: 0 auto; border: 1px solid #45a29e; text-align: left;
+}
+.solid-box label { display: block; margin: 15px 0 5px; color: #66fcf1; font-weight: bold; }
+.solid-box input, .solid-box select, .solid-box textarea {
+    width: 100%; padding: 12px; background: #0b0c10; border: 1px solid #45a29e;
+    color: #fff; border-radius: 4px; font-family: 'Rajdhani', sans-serif; font-size: 1rem;
 }
 
-.input-group-vertical label {
-    font-size: 0.75rem;
-    color: var(--neon);
-    margin-top: 15px;
-    margin-bottom: 5px;
-    text-transform: uppercase;
-    font-weight: bold;
-}
+/* Tables */
+.table-wrapper { overflow-x: auto; background: #1f2833; border-radius: 8px; border: 1px solid #45a29e; }
+table { width: 100%; border-collapse: collapse; min-width: 400px; }
+th, td { padding: 15px; text-align: center; border-bottom: 1px solid #0b0c10; }
+th { background: #45a29e; color: #0b0c10; font-weight: bold; }
 
-.input-group-vertical input, 
-.input-group-vertical select, 
-.input-group-vertical textarea {
-    background: #111;
-    border: 1px solid #333;
-    color: #fff;
-    padding: 12px;
-    border-radius: 8px;
-    font-family: 'Rajdhani', sans-serif;
+.reg-btn {
+    border: 2px solid #66fcf1; color: #66fcf1; padding: 8px 15px;
+    text-decoration: none; border-radius: 4px; font-weight: bold; transition: 0.3s;
 }
+.reg-btn:hover { background: #66fcf1; color: #0b0c10; }
 
-.input-group-vertical textarea {
-    resize: none;
+/* Rules Modal Popup */
+.modal {
+    display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0,0,0,0.9); z-index: 1000; align-items: center; justify-content: center; padding: 20px;
 }
+.modal.active { display: flex; }
+.modal-content { background: #111; padding: 30px; border: 2px solid #66fcf1; border-radius: 10px; width: 100%; max-width: 400px; position: relative; text-align: center; }
+.close-btn { position: absolute; top: 10px; right: 20px; font-size: 2rem; color: #fff; cursor: pointer; }
 
-.wide-btn {
-    width: 100%;
-    margin-top: 25px;
-    border: none;
-}
+footer { padding: 20px; text-align: center; background: #1f2833; font-size: 0.8rem; margin-top: 30px; }
 
-.btn-outline {
-    display: block;
-    text-align: center;
-    border: 1px solid var(--neon);
-    color: var(--neon);
-    padding: 10px;
-    border-radius: 8px;
-    text-decoration: none;
-    margin-top: 15px;
-    font-weight: bold;
+/* Mobile Fixes */
+@media (max-width: 600px) {
+    header { flex-direction: column; gap: 10px; }
+    .top-nav { justify-content: center; }
 }
