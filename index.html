@@ -3,53 +3,93 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FF Elite Scrims | Home</title>
+    <title>FF ELITE SCRIMS | Official</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@300;500&display=swap" rel="stylesheet">
 </head>
 <body>
+
     <header>
+        <div class="logo">FF ELITE <span>SCRIMS</span></div>
         <nav>
-            <div class="logo">FF ELITE</div>
             <ul>
-                <li><a href="#">Home</a></li>
                 <li><a href="#scrims">Scrims</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="#leaderboard">Points</a></li>
             </ul>
         </nav>
     </header>
 
     <section class="hero">
-        <h1>Level Up Your Gameplay</h1>
-        <p>Join the most competitive Free Fire scrims today.</p>
-        <a href="#scrims" class="btn">View Schedule</a>
+        <div class="hero-content">
+            <h1>DOMINATE THE LOBBY</h1>
+            <p>High-level competitive scrims for Free Fire Teams.</p>
+            <a href="https://wa.me/YOUR_NUMBER" class="btn-glow">JOIN WHATSAPP GROUP</a>
+        </div>
     </section>
 
-    <section id="scrims">
-        <h2>Upcoming Scrims</h2>
-        <table>
-            <tr>
-                <th>Time</th>
-                <th>Type</th>
-                <th>Slots</th>
-                <th>Action</th>
-            </tr>
-            <tr>
-                <td>07:00 PM</td>
-                <td>Paid (₹50)</td>
-                <td>10/12</td>
-                <td><button class="reg-btn">Register</button></td>
-            </tr>
-            <tr>
-                <td>09:00 PM</td>
-                <td>Free Scrims</td>
-                <td>Full</td>
-                <td><button class="reg-btn disabled" disabled>Closed</button></td>
-            </tr>
-        </table>
+    <section id="scrims" class="container">
+        <h2 class="section-title">Upcoming Scrims</h2>
+        <div class="table-wrapper">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Time</th>
+                        <th>Type</th>
+                        <th>Status</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>07:00 PM</td>
+                        <td>Paid (₹50)</td>
+                        <td class="status-open">10/12 Slots</td>
+                        <td><a href="https://wa.me/YOUR_NUMBER?text=I%20want%20to%20register%20for%207PM%20Paid" class="reg-btn">Register</a></td>
+                    </tr>
+                    <tr>
+                        <td>09:00 PM</td>
+                        <td>Free Scrims</td>
+                        <td class="status-closed">Full</td>
+                        <td><button class="reg-btn disabled" disabled>Closed</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <section id="leaderboard" class="container">
+        <h2 class="section-title">🏆 Top Teams</h2>
+        <div class="table-wrapper">
+            <table>
+                <thead>
+                    <tr class="rank-header">
+                        <th>Rank</th>
+                        <th>Team Name</th>
+                        <th>Kills</th>
+                        <th>Total Pts</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="gold">#1</td>
+                        <td>Total Gaming</td>
+                        <td>12</td>
+                        <td>24</td>
+                    </tr>
+                    <tr>
+                        <td class="silver">#2</td>
+                        <td>GodLike</td>
+                        <td>8</td>
+                        <td>18</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
     </section>
 
     <footer>
-        <p>&copy; 2026 FF Elite Scrims. All Rights Reserved.</p>
+        <p>&copy; 2026 FF Elite Scrims | Designed for Champions</p>
     </footer>
+
 </body>
 </html>
