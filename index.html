@@ -3,89 +3,130 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SK PAID SCRIMS | Elite</title>
+    <title>SK PAID SCRIMS | Official</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;900&family=Rajdhani:wght@500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;800&family=Rajdhani:wght@500;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <header class="glass-header">
+    <header>
         <div class="logo">SK<span>SCRIMS</span></div>
-        <div class="live-indicator"><span class="dot"></span> LIVE</div>
+        <nav class="top-nav">
+            <a href="#register">Register</a>
+            <a href="#scrims">Matches</a>
+            <a href="#calculator">Calc</a>
+            <a href="javascript:void(0)" onclick="toggleRules()">Rules</a>
+        </nav>
     </header>
 
-    <nav class="bottom-nav">
-        <a href="#" class="nav-item active">🏠<span>Home</span></a>
-        <a href="#register" class="nav-item">📝<span>Join</span></a>
-        <a href="#scrims" class="nav-item">⚔️<span>Matches</span></a>
-        <a href="#calculator" class="nav-item">📊<span>Calc</span></a>
-    </nav>
-
-    <main class="content-area">
-        <section class="hero-banner">
-            <div class="hero-card">
-                <h2>SK SEASON 4</h2>
-                <p>Register for the ₹5,000 Grand Slam</p>
-                <a href="#register" class="btn-main">BOOK A SLOT</a>
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h1>SK PAID SCRIMS</h1>
+                <p>Tier-1 & Tier-2 Competitive Hub</p>
+                <a href="https://whatsapp.com/channel/0029Vb7oXxA4NVidDg3nC83b" class="btn-glow">JOIN WHATSAPP CHANNEL</a>
             </div>
         </section>
 
-        <section id="register" class="section">
-            <h3 class="title-glow">TEAM REGISTRATION</h3>
-            <div class="glass-input-box">
+        <section id="register" class="container">
+            <h2 class="section-title">📝 Team Registration</h2>
+            <div class="solid-box">
                 <form action="https://formspree.io/f/YOUR_UNIQUE_ID" method="POST">
-                    <div class="input-group-vertical">
-                        <label>Team Name</label>
-                        <input type="text" name="team_name" placeholder="Enter Team Name" required>
-                        
-                        <label>Leader WhatsApp</label>
-                        <input type="tel" name="whatsapp" placeholder="91XXXXXXXXXX" required>
-                        
-                        <label>Select Match</label>
-                        <select name="match_time">
-                            <option value="07:00 PM">07:00 PM (Paid)</option>
-                            <option value="09:00 PM">09:00 PM (Free)</option>
-                        </select>
+                    <label>Team Name</label>
+                    <input type="text" name="team_name" placeholder="Enter Team Name" required>
+                    
+                    <label>Leader WhatsApp</label>
+                    <input type="tel" name="whatsapp" placeholder="91XXXXXXXXXX" required>
+                    
+                    <label>Select Match</label>
+                    <select name="match_time">
+                        <option value="07:00 PM">07:00 PM - Bermuda (₹500 Pool)</option>
+                        <option value="09:00 PM">09:00 PM - Purgatory (₹1000 Pool)</option>
+                    </select>
 
-                        <label>Player UIDs (Player 1, 2, 3, 4)</label>
-                        <textarea name="uids" rows="3" placeholder="Paste UIDs here..." required></textarea>
-                    </div>
-                    <button type="submit" class="btn-main wide-btn">SUBMIT REGISTRATION</button>
+                    <label>Player UIDs</label>
+                    <textarea name="uids" rows="3" placeholder="Paste all 4 Player UIDs here..." required></textarea>
+                    
+                    <button type="submit" class="btn-glow" style="width: 100%; margin-top: 15px;">SUBMIT REGISTRATION</button>
                 </form>
             </div>
         </section>
 
-        <div id="scrims" class="section">
-            <h3 class="title-glow">DAILY SCRIMS</h3>
-            <div class="match-glass-card">
-                <div class="m-header"><span>Bermuda</span> <span class="m-price">₹50</span></div>
-                <div class="m-body">🕒 07:00 PM • 12 Slots Left</div>
-                <a href="#register" class="btn-outline">REGISTER NOW</a>
+        <section id="scrims" class="container">
+            <h2 class="section-title">⚔️ Daily Matches</h2>
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Time</th>
+                            <th>Map</th>
+                            <th>Prize</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>07:00 PM</td>
+                            <td>Bermuda</td>
+                            <td>₹500</td>
+                            <td><a href="#register" class="reg-btn">Book Slot</a></td>
+                        </tr>
+                        <tr>
+                            <td>09:00 PM</td>
+                            <td>Purgatory</td>
+                            <td>₹1000</td>
+                            <td><a href="#register" class="reg-btn">Book Slot</a></td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
-        </div>
+        </section>
 
-        <div id="calculator" class="section">
-            <div class="glass-input-box">
-                <h4 class="title-glow">POINTS CALCULATOR</h4>
-                <div class="input-group">
-                    <input type="number" id="kills" placeholder="Kills">
-                    <select id="placement">
-                        <option value="12">#1 (12pt)</option>
-                        <option value="9">#2 (9pt)</option>
-                        <option value="1">#10 (1pt)</option>
-                    </select>
-                </div>
-                <button onclick="calculateScore()" class="btn-main wide-btn">CALCULATE</button>
-                <h2 id="resultText">Result: 0</h2>
+        <section id="calculator" class="container">
+            <h2 class="section-title">📊 Points Calculator</h2>
+            <div class="solid-box">
+                <label>Team Kills:</label>
+                <input type="number" id="kills" placeholder="0">
+                <label>Placement:</label>
+                <select id="placement">
+                    <option value="12">1st (Booyah) - 12 pts</option>
+                    <option value="9">2nd - 9 pts</option>
+                    <option value="8">3rd - 8 pts</option>
+                    <option value="1">10th - 1 pt</option>
+                    <option value="0">11th/12th - 0 pts</option>
+                </select>
+                <button onclick="calculateScore()" class="btn-glow" style="width: 100%; margin-top: 15px;">Calculate</button>
+                <h3 id="resultText" style="margin-top: 15px; color: #66fcf1; text-align: center;">Total Score: 0</h3>
             </div>
-        </div>
+        </section>
     </main>
 
+    <div id="rulesModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="toggleRules()">&times;</span>
+            <h2 style="color:#66fcf1; font-family:'Orbitron'; margin-bottom: 15px;">OFFICIAL RULES</h2>
+            <div style="text-align: left; line-height: 1.8; color: #ccc;">
+                <p>1. 🚫 No Hack/Config (Permanent Ban)</p>
+                <p>2. 📵 Mobile Only (No PC/Emulator)</p>
+                <p>3. 📸 Winners must send Booyah SS to Admin</p>
+                <p>4. ⏰ Room starts exactly on time.</p>
+            </div>
+            <button class="btn-glow" style="width: 100%; margin-top: 20px;" onclick="toggleRules()">I AGREE</button>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 SK PAID SCRIMS | All Rights Reserved</p>
+    </footer>
+
     <script>
+        function toggleRules() {
+            document.getElementById('rulesModal').classList.toggle('active');
+        }
         function calculateScore() {
             let k = parseInt(document.getElementById('kills').value) || 0;
             let p = parseInt(document.getElementById('placement').value);
-            document.getElementById('resultText').innerText = "Result: " + (k + p);
+            document.getElementById('resultText').innerText = "Total Score: " + (k + p);
         }
     </script>
 </body>
