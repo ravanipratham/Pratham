@@ -1,88 +1,53 @@
-/* General Setup */
-* { box-sizing: border-box; margin: 0; padding: 0; }
-body {
-    background-color: #0b0c10;
-    color: #c5c6c7;
-    font-family: 'Roboto', sans-serif;
-    line-height: 1.6;
-}
-
+* { box-sizing: border-box; margin: 0; padding: 0; scroll-behavior: smooth; }
+body { background-color: #0b0c10; color: #c5c6c7; font-family: 'Roboto', sans-serif; }
 h1, h2, .logo { font-family: 'Orbitron', sans-serif; }
 
-/* Header */
 header {
-    background: #1f2833;
-    padding: 15px 5%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: 2px solid #66fcf1;
-    position: sticky;
-    top: 0;
-    z-index: 100;
+    background: #1f2833; padding: 15px 5%;
+    display: flex; justify-content: space-between; align-items: center;
+    border-bottom: 2px solid #66fcf1; position: sticky; top: 0; z-index: 100;
 }
-
-.logo { color: #fff; font-size: 1.5rem; font-weight: bold; }
+.logo { color: #fff; font-size: 1.5rem; }
 .logo span { color: #66fcf1; }
-
 nav ul { list-style: none; display: flex; }
 nav ul li { margin-left: 15px; }
-nav ul li a { color: #fff; text-decoration: none; font-size: 0.9rem; }
+nav ul li a { color: #fff; text-decoration: none; font-size: 0.8rem; }
 
-/* Hero Section */
 .hero {
-    height: 60vh;
-    background: linear-gradient(to bottom, rgba(11, 12, 16, 0.6), #0b0c10), 
-                url('https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&q=80&w=1000');
-    background-size: cover;
-    background-position: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 20px;
+    height: 50vh; display: flex; align-items: center; justify-content: center; text-align: center;
+    background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('https://wallpaperaccess.com/full/1151152.jpg');
+    background-size: cover; padding: 20px;
 }
+.hero h1 { font-size: 2rem; color: #66fcf1; margin-bottom: 10px; }
 
-.hero h1 { font-size: 2.5rem; color: #66fcf1; margin-bottom: 10px; }
 .btn-glow {
-    display: inline-block;
-    margin-top: 20px;
-    padding: 12px 30px;
-    background: #66fcf1;
-    color: #0b0c10;
-    text-decoration: none;
-    font-weight: bold;
-    border-radius: 50px;
-    box-shadow: 0 0 15px #66fcf1;
-    transition: 0.3s;
+    display: inline-block; padding: 12px 25px; background: #66fcf1;
+    color: #0b0c10; text-decoration: none; font-weight: bold;
+    border-radius: 5px; box-shadow: 0 0 10px #66fcf1; border: none; cursor: pointer;
 }
 
-/* Tables & Layout */
-.container { padding: 40px 5%; }
-.section-title { text-align: center; margin-bottom: 30px; color: #fff; border-left: 5px solid #66fcf1; padding-left: 10px; display: inline-block; }
+.container { padding: 40px 5%; text-align: center; }
+.section-title { margin-bottom: 25px; color: #fff; text-transform: uppercase; letter-spacing: 2px; }
 
-.table-wrapper { overflow-x: auto; background: #1f2833; border-radius: 10px; }
-table { width: 100%; border-collapse: collapse; min-width: 500px; }
+.table-wrapper { overflow-x: auto; background: #1f2833; border-radius: 8px; }
+table { width: 100%; border-collapse: collapse; }
 th, td { padding: 15px; text-align: left; border-bottom: 1px solid #0b0c10; }
-th { background: #45a29e; color: #0b0c10; text-transform: uppercase; font-size: 0.8rem; }
+th { background: #45a29e; color: #0b0c10; font-size: 0.7rem; }
 
-/* Buttons & Status */
 .reg-btn {
-    background: transparent;
-    border: 1px solid #66fcf1;
-    color: #66fcf1;
-    padding: 8px 15px;
-    text-decoration: none;
-    border-radius: 5px;
-    font-size: 0.8rem;
-    transition: 0.3s;
+    border: 1px solid #66fcf1; color: #66fcf1; padding: 5px 10px;
+    text-decoration: none; border-radius: 4px; font-size: 0.8rem;
 }
-.reg-btn:hover { background: #66fcf1; color: #0b0c10; }
-.disabled { border-color: #555; color: #555; cursor: not-allowed; }
-.status-open { color: #00ff00; font-weight: bold; }
-.status-closed { color: #ff4d4d; }
 
-.gold { color: #ffd700; font-weight: bold; }
-.silver { color: #c0c0c0; font-weight: bold; }
+.calc-box {
+    background: #1f2833; padding: 30px; border-radius: 10px;
+    max-width: 400px; margin: 0 auto; border: 1px solid #45a29e;
+}
+.calc-box input, .calc-box select {
+    width: 100%; padding: 10px; margin-bottom: 15px;
+    background: #0b0c10; border: 1px solid #45a29e; color: #fff;
+}
 
-footer { text-align: center; padding: 20px; background: #1f2833; margin-top: 40px; font-size: 0.8rem; }
+.gold { color: #ffd700; }
+.silver { color: #c0c0c0; }
+footer { padding: 20px; background: #1f2833; font-size: 0.7rem; }
