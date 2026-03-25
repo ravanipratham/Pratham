@@ -3,119 +3,89 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SK PAID SCRIMS | Elite Gaming</title>
+    <title>SK PAID SCRIMS | Elite</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;800&family=Rajdhani:wght@500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;900&family=Rajdhani:wght@500;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="bg-circle"></div>
-    <div class="bg-circle2"></div>
 
-    <div id="sideMenu" class="side-nav">
-        <a href="javascript:void(0)" class="closebtn" onclick="toggleMenu()">&times;</a>
-        <div class="menu-links">
-            <a href="#" onclick="toggleMenu()">🏠 Home</a>
-            <a href="#scrims" onclick="toggleMenu()">⚔️ Scrims</a>
-            <a href="#fraggers" onclick="toggleMenu()">🔥 Top Fraggers</a>
-            <a href="#calculator" onclick="toggleMenu()">📊 Points Calc</a>
-            <a href="#gallery" onclick="toggleMenu()">📸 Winners Gallery</a>
-            <a href="javascript:void(0)" onclick="toggleRules(); toggleMenu()">📜 Rulebook</a>
-        </div>
-    </div>
-
-    <header>
-        <div class="menu-icon" onclick="toggleMenu()">
-            <div class="bar"></div>
-            <div class="bar"></div>
-            <div class="bar"></div>
-        </div>
+    <header class="glass-header">
         <div class="logo">SK<span>SCRIMS</span></div>
-        <a href="https://whatsapp.com/channel/0029Vb7oXxA4NVidDg3nC83b" class="nav-join">JOIN</a>
+        <div class="live-indicator"><span class="dot"></span> LIVE</div>
     </header>
 
-    <main>
-        <section class="hero">
-            <h1 class="glitch">SK PAID SCRIMS</h1>
-            <p>2026 Competitive Hub • Pro Tier</p>
+    <nav class="bottom-nav">
+        <a href="#" class="nav-item active">🏠<span>Home</span></a>
+        <a href="#register" class="nav-item">📝<span>Join</span></a>
+        <a href="#scrims" class="nav-item">⚔️<span>Matches</span></a>
+        <a href="#calculator" class="nav-item">📊<span>Calc</span></a>
+    </nav>
+
+    <main class="content-area">
+        <section class="hero-banner">
+            <div class="hero-card">
+                <h2>SK SEASON 4</h2>
+                <p>Register for the ₹5,000 Grand Slam</p>
+                <a href="#register" class="btn-main">BOOK A SLOT</a>
+            </div>
         </section>
 
-        <h2 class="section-title">🔥 Top Fraggers (Weekly)</h2>
-        <div class="fragger-list glass-box">
-            <div class="fragger-item">
-                <span class="rank gold">#1</span>
-                <span class="player-name">SK_PRATHAM</span>
-                <span class="kills-count">42 Kills</span>
+        <section id="register" class="section">
+            <h3 class="title-glow">TEAM REGISTRATION</h3>
+            <div class="glass-input-box">
+                <form action="https://formspree.io/f/YOUR_UNIQUE_ID" method="POST">
+                    <div class="input-group-vertical">
+                        <label>Team Name</label>
+                        <input type="text" name="team_name" placeholder="Enter Team Name" required>
+                        
+                        <label>Leader WhatsApp</label>
+                        <input type="tel" name="whatsapp" placeholder="91XXXXXXXXXX" required>
+                        
+                        <label>Select Match</label>
+                        <select name="match_time">
+                            <option value="07:00 PM">07:00 PM (Paid)</option>
+                            <option value="09:00 PM">09:00 PM (Free)</option>
+                        </select>
+
+                        <label>Player UIDs (Player 1, 2, 3, 4)</label>
+                        <textarea name="uids" rows="3" placeholder="Paste UIDs here..." required></textarea>
+                    </div>
+                    <button type="submit" class="btn-main wide-btn">SUBMIT REGISTRATION</button>
+                </form>
             </div>
-            <div class="fragger-item">
-                <span class="rank silver">#2</span>
-                <span class="player-name">SK_RAVAN</span>
-                <span class="kills-count">38 Kills</span>
+        </section>
+
+        <div id="scrims" class="section">
+            <h3 class="title-glow">DAILY SCRIMS</h3>
+            <div class="match-glass-card">
+                <div class="m-header"><span>Bermuda</span> <span class="m-price">₹50</span></div>
+                <div class="m-body">🕒 07:00 PM • 12 Slots Left</div>
+                <a href="#register" class="btn-outline">REGISTER NOW</a>
             </div>
         </div>
 
-        <h2 class="section-title">Next Matches</h2>
-        <div class="card-grid" id="scrims">
-            <div class="match-card">
-                <div class="card-tag">LIVE SOON</div>
-                <h3>Bermuda Night</h3>
-                <div class="card-info">
-                    <span>🕒 07:00 PM</span>
-                    <span>💰 ₹500 Pool</span>
+        <div id="calculator" class="section">
+            <div class="glass-input-box">
+                <h4 class="title-glow">POINTS CALCULATOR</h4>
+                <div class="input-group">
+                    <input type="number" id="kills" placeholder="Kills">
+                    <select id="placement">
+                        <option value="12">#1 (12pt)</option>
+                        <option value="9">#2 (9pt)</option>
+                        <option value="1">#10 (1pt)</option>
+                    </select>
                 </div>
-                <a href="https://whatsapp.com/channel/0029Vb7oXxA4NVidDg3nC83b" class="btn-neon">BOOK SLOT</a>
+                <button onclick="calculateScore()" class="btn-main wide-btn">CALCULATE</button>
+                <h2 id="resultText">Result: 0</h2>
             </div>
-        </div>
-
-        <h2 class="section-title">📸 Winners Gallery</h2>
-        <div class="gallery-grid" id="gallery">
-            <div class="gallery-item">
-                <img src="https://via.placeholder.com/300x150/111/66fcf1?text=Booyah+Team+A" alt="Winner">
-                <p>Team Elite - 12 Kills</p>
-            </div>
-            <div class="gallery-item">
-                <img src="https://via.placeholder.com/300x150/111/66fcf1?text=Booyah+Team+B" alt="Winner">
-                <p>GodLike - 15 Kills</p>
-            </div>
-        </div>
-
-        <div class="glass-box" id="calculator">
-            <h2 class="section-title">Quick Points Calc</h2>
-            <div class="calc-row">
-                <input type="number" id="kills" placeholder="Kills">
-                <select id="placement">
-                    <option value="12">#1 Booyah</option>
-                    <option value="9">#2 Rank</option>
-                    <option value="1">#10 Rank</option>
-                </select>
-            </div>
-            <button onclick="calculateScore()" class="btn-neon wide">CALCULATE</button>
-            <h3 id="resultText">Score: 0</h3>
         </div>
     </main>
 
-    <div id="rulesModal" class="modal">
-        <div class="modal-content">
-            <span class="close-btn" onclick="toggleRules()">&times;</span>
-            <h2 style="color:var(--neon); font-family:'Orbitron';">OFFICIAL RULES</h2>
-            <div class="rules-list">
-                <p>1. 🚫 No Hack/Config (Permanent Ban)</p>
-                <p>2. 📵 Mobile Only (No PC/Emulator)</p>
-                <p>3. 📸 Winners must send Booyah SS to Admin</p>
-            </div>
-        </div>
-    </div>
-
     <script>
-        function toggleMenu() {
-            document.getElementById("sideMenu").classList.toggle("open");
-        }
-        function toggleRules() {
-            document.getElementById('rulesModal').classList.toggle('active');
-        }
         function calculateScore() {
             let k = parseInt(document.getElementById('kills').value) || 0;
             let p = parseInt(document.getElementById('placement').value);
-            document.getElementById('resultText').innerText = "Score: " + (k + p);
+            document.getElementById('resultText').innerText = "Result: " + (k + p);
         }
     </script>
 </body>
