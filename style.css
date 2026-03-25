@@ -1,40 +1,49 @@
-/* --- SIDE NAVIGATION --- */
-.side-nav {
-    height: 100%; width: 0; position: fixed; z-index: 1001;
-    top: 0; left: 0; background-color: rgba(5, 5, 5, 0.95);
-    backdrop-filter: blur(15px); overflow-x: hidden;
-    transition: 0.5s; padding-top: 60px;
-}
-.side-nav.open { width: 280px; border-right: 1px solid var(--neon); }
-.menu-links a {
-    padding: 15px 32px; text-decoration: none; font-size: 1.2rem;
-    color: #fff; display: block; transition: 0.3s; font-weight: 700;
-}
-.menu-links a:hover { color: var(--neon); padding-left: 45px; }
-.closebtn { position: absolute; top: 10px; right: 25px; font-size: 36px; text-decoration: none; color: #fff; }
+/* ... Keep your previous styles ... */
 
-/* --- HAMBURGER ICON --- */
-.menu-icon { cursor: pointer; display: flex; flex-direction: column; gap: 5px; }
-.bar { width: 25px; height: 3px; background-color: #fff; border-radius: 2px; }
-
-/* --- TOP FRAGGERS --- */
-.fragger-list { padding: 15px; margin: 0 5%; }
-.fragger-item {
-    display: flex; justify-content: space-between; align-items: center;
-    padding: 12px 0; border-bottom: 1px solid #222;
+.input-group-vertical {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
 }
-.player-name { font-weight: bold; color: #fff; }
-.kills-count { color: var(--neon); font-family: 'Orbitron'; font-size: 0.9rem; }
 
-/* --- WINNERS GALLERY --- */
-.gallery-grid {
-    padding: 0 5%; display: grid; grid-template-columns: 1fr 1fr; gap: 15px;
+.input-group-vertical label {
+    font-size: 0.75rem;
+    color: var(--neon);
+    margin-top: 15px;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+    font-weight: bold;
 }
-.gallery-item {
-    background: var(--glass); border-radius: 10px; overflow: hidden;
-    border: 1px solid #333; text-align: center;
-}
-.gallery-item img { width: 100%; height: auto; display: block; border-bottom: 1px solid #333; }
-.gallery-item p { padding: 8px; font-size: 0.8rem; color: #888; }
 
-/* (Keep all previous styles for .btn-neon, .hero, .glass-box, etc.) */
+.input-group-vertical input, 
+.input-group-vertical select, 
+.input-group-vertical textarea {
+    background: #111;
+    border: 1px solid #333;
+    color: #fff;
+    padding: 12px;
+    border-radius: 8px;
+    font-family: 'Rajdhani', sans-serif;
+}
+
+.input-group-vertical textarea {
+    resize: none;
+}
+
+.wide-btn {
+    width: 100%;
+    margin-top: 25px;
+    border: none;
+}
+
+.btn-outline {
+    display: block;
+    text-align: center;
+    border: 1px solid var(--neon);
+    color: var(--neon);
+    padding: 10px;
+    border-radius: 8px;
+    text-decoration: none;
+    margin-top: 15px;
+    font-weight: bold;
+}
