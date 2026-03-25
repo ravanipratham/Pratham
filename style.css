@@ -1,76 +1,40 @@
-:root {
-    --neon: #66fcf1;
-    --dark: #0b0c10;
-    --glass: rgba(255, 255, 255, 0.05);
+/* --- SIDE NAVIGATION --- */
+.side-nav {
+    height: 100%; width: 0; position: fixed; z-index: 1001;
+    top: 0; left: 0; background-color: rgba(5, 5, 5, 0.95);
+    backdrop-filter: blur(15px); overflow-x: hidden;
+    transition: 0.5s; padding-top: 60px;
 }
+.side-nav.open { width: 280px; border-right: 1px solid var(--neon); }
+.menu-links a {
+    padding: 15px 32px; text-decoration: none; font-size: 1.2rem;
+    color: #fff; display: block; transition: 0.3s; font-weight: 700;
+}
+.menu-links a:hover { color: var(--neon); padding-left: 45px; }
+.closebtn { position: absolute; top: 10px; right: 25px; font-size: 36px; text-decoration: none; color: #fff; }
 
-* { box-sizing: border-box; margin: 0; padding: 0; }
-body {
-    background: #050505;
-    color: #fff;
-    font-family: 'Rajdhani', sans-serif;
-    overflow-x: hidden;
-}
+/* --- HAMBURGER ICON --- */
+.menu-icon { cursor: pointer; display: flex; flex-direction: column; gap: 5px; }
+.bar { width: 25px; height: 3px; background-color: #fff; border-radius: 2px; }
 
-/* Dynamic Background Elements */
-.bg-circle {
-    position: fixed; top: -100px; right: -100px; width: 400px; height: 400px;
-    background: radial-gradient(circle, rgba(102, 252, 241, 0.15) 0%, transparent 70%);
-    z-index: -1;
-}
-.bg-circle2 {
-    position: fixed; bottom: -100px; left: -100px; width: 300px; height: 300px;
-    background: radial-gradient(circle, rgba(69, 162, 158, 0.1) 0%, transparent 70%);
-    z-index: -1;
-}
-
-header {
+/* --- TOP FRAGGERS --- */
+.fragger-list { padding: 15px; margin: 0 5%; }
+.fragger-item {
     display: flex; justify-content: space-between; align-items: center;
-    padding: 20px 5%; background: rgba(0,0,0,0.8); backdrop-filter: blur(10px);
-    border-bottom: 1px solid var(--glass); position: sticky; top: 0; z-index: 100;
+    padding: 12px 0; border-bottom: 1px solid #222;
 }
-.logo { font-family: 'Orbitron'; font-weight: 800; font-size: 1.2rem; }
-.logo span { color: var(--neon); margin-left: 5px; }
-.nav-join { color: var(--neon); text-decoration: none; font-weight: bold; font-size: 0.8rem; border: 1px solid var(--neon); padding: 5px 12px; border-radius: 4px; }
+.player-name { font-weight: bold; color: #fff; }
+.kills-count { color: var(--neon); font-family: 'Orbitron'; font-size: 0.9rem; }
 
-.hero { padding: 80px 5%; text-align: center; }
-.hero h1 { font-family: 'Orbitron'; font-size: 2.5rem; letter-spacing: 2px; text-shadow: 0 0 10px var(--neon); }
-.hero p { color: #888; margin-top: 10px; text-transform: uppercase; letter-spacing: 1px; }
-
-.section-title { padding: 0 5%; font-size: 1.2rem; text-transform: uppercase; margin: 30px 0 15px; color: var(--neon); }
-
-/* Glass Match Cards */
-.card-grid { padding: 0 5%; display: grid; gap: 20px; }
-.match-card {
-    background: var(--glass);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
-    padding: 20px; border-radius: 15px;
-    transition: 0.3s;
+/* --- WINNERS GALLERY --- */
+.gallery-grid {
+    padding: 0 5%; display: grid; grid-template-columns: 1fr 1fr; gap: 15px;
 }
-.match-card:hover { transform: translateY(-5px); border-color: var(--neon); }
-.card-tag { display: inline-block; background: #222; font-size: 0.7rem; padding: 3px 8px; border-radius: 4px; margin-bottom: 15px; border: 1px solid #444; }
-.gold-tag { border-color: #ffd700; color: #ffd700; }
-.card-info { display: flex; justify-content: space-between; margin: 15px 0; color: #aaa; font-weight: bold; }
+.gallery-item {
+    background: var(--glass); border-radius: 10px; overflow: hidden;
+    border: 1px solid #333; text-align: center;
+}
+.gallery-item img { width: 100%; height: auto; display: block; border-bottom: 1px solid #333; }
+.gallery-item p { padding: 8px; font-size: 0.8rem; color: #888; }
 
-/* Buttons */
-.btn-neon {
-    background: var(--neon); color: #000; text-decoration: none;
-    font-weight: 800; padding: 12px; display: block; text-align: center;
-    border-radius: 8px; box-shadow: 0 5px 15px rgba(102, 252, 241, 0.3); transition: 0.3s;
-}
-.btn-neon.wide { width: 100%; border: none; cursor: pointer; }
-.btn-neon:hover { transform: scale(1.02); box-shadow: 0 0 25px var(--neon); }
-
-/* Tool Box */
-.glass-box {
-    margin: 50px 5%; padding: 30px;
-    background: linear-gradient(145deg, rgba(255,255,255,0.05), rgba(255,255,255,0.01));
-    border-radius: 20px; border: 1px solid var(--glass);
-}
-.calc-row { display: flex; gap: 10px; margin-bottom: 20px; }
-.calc-row input, .calc-row select {
-    flex: 1; background: #111; border: 1px solid #333; color: #fff;
-    padding: 12px; border-radius: 8px;
-}
-#resultText { margin-top: 20px; text-align: center; font-family: 'Orbitron'; color: var(--neon); }
+/* (Keep all previous styles for .btn-neon, .hero, .glass-box, etc.) */
