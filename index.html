@@ -11,19 +11,50 @@
     <div class="bg-circle"></div>
     <div class="bg-circle2"></div>
 
+    <div id="sideMenu" class="side-nav">
+        <a href="javascript:void(0)" class="closebtn" onclick="toggleMenu()">&times;</a>
+        <div class="menu-links">
+            <a href="#" onclick="toggleMenu()">🏠 Home</a>
+            <a href="#scrims" onclick="toggleMenu()">⚔️ Scrims</a>
+            <a href="#fraggers" onclick="toggleMenu()">🔥 Top Fraggers</a>
+            <a href="#calculator" onclick="toggleMenu()">📊 Points Calc</a>
+            <a href="#gallery" onclick="toggleMenu()">📸 Winners Gallery</a>
+            <a href="javascript:void(0)" onclick="toggleRules(); toggleMenu()">📜 Rulebook</a>
+        </div>
+    </div>
+
     <header>
+        <div class="menu-icon" onclick="toggleMenu()">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
         <div class="logo">SK<span>SCRIMS</span></div>
-        <a href="https://whatsapp.com/channel/0029Vb7oXxA4NVidDg3nC83b" class="nav-join">JOIN CHANNEL</a>
+        <a href="https://whatsapp.com/channel/0029Vb7oXxA4NVidDg3nC83b" class="nav-join">JOIN</a>
     </header>
 
     <main>
         <section class="hero">
-            <h1 class="glitch" data-text="SK PAID SCRIMS">SK PAID SCRIMS</h1>
-            <p>The Ultimate 2026 Competitive Hub</p>
+            <h1 class="glitch">SK PAID SCRIMS</h1>
+            <p>2026 Competitive Hub • Pro Tier</p>
         </section>
 
+        <h2 class="section-title">🔥 Top Fraggers (Weekly)</h2>
+        <div class="fragger-list glass-box">
+            <div class="fragger-item">
+                <span class="rank gold">#1</span>
+                <span class="player-name">SK_PRATHAM</span>
+                <span class="kills-count">42 Kills</span>
+            </div>
+            <div class="fragger-item">
+                <span class="rank silver">#2</span>
+                <span class="player-name">SK_RAVAN</span>
+                <span class="kills-count">38 Kills</span>
+            </div>
+        </div>
+
         <h2 class="section-title">Next Matches</h2>
-        <div class="card-grid">
+        <div class="card-grid" id="scrims">
             <div class="match-card">
                 <div class="card-tag">LIVE SOON</div>
                 <h3>Bermuda Night</h3>
@@ -33,26 +64,27 @@
                 </div>
                 <a href="https://whatsapp.com/channel/0029Vb7oXxA4NVidDg3nC83b" class="btn-neon">BOOK SLOT</a>
             </div>
+        </div>
 
-            <div class="match-card">
-                <div class="card-tag gold-tag">MEGA EVENT</div>
-                <h3>Purgatory Pro</h3>
-                <div class="card-info">
-                    <span>🕒 09:00 PM</span>
-                    <span>💰 ₹1000 Pool</span>
-                </div>
-                <a href="https://whatsapp.com/channel/0029Vb7oXxA4NVidDg3nC83b" class="btn-neon">BOOK SLOT</a>
+        <h2 class="section-title">📸 Winners Gallery</h2>
+        <div class="gallery-grid" id="gallery">
+            <div class="gallery-item">
+                <img src="https://via.placeholder.com/300x150/111/66fcf1?text=Booyah+Team+A" alt="Winner">
+                <p>Team Elite - 12 Kills</p>
+            </div>
+            <div class="gallery-item">
+                <img src="https://via.placeholder.com/300x150/111/66fcf1?text=Booyah+Team+B" alt="Winner">
+                <p>GodLike - 15 Kills</p>
             </div>
         </div>
 
-        <div class="glass-box">
+        <div class="glass-box" id="calculator">
             <h2 class="section-title">Quick Points Calc</h2>
             <div class="calc-row">
                 <input type="number" id="kills" placeholder="Kills">
                 <select id="placement">
                     <option value="12">#1 Booyah</option>
                     <option value="9">#2 Rank</option>
-                    <option value="8">#3 Rank</option>
                     <option value="1">#10 Rank</option>
                 </select>
             </div>
@@ -61,11 +93,29 @@
         </div>
     </main>
 
+    <div id="rulesModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="toggleRules()">&times;</span>
+            <h2 style="color:var(--neon); font-family:'Orbitron';">OFFICIAL RULES</h2>
+            <div class="rules-list">
+                <p>1. 🚫 No Hack/Config (Permanent Ban)</p>
+                <p>2. 📵 Mobile Only (No PC/Emulator)</p>
+                <p>3. 📸 Winners must send Booyah SS to Admin</p>
+            </div>
+        </div>
+    </div>
+
     <script>
+        function toggleMenu() {
+            document.getElementById("sideMenu").classList.toggle("open");
+        }
+        function toggleRules() {
+            document.getElementById('rulesModal').classList.toggle('active');
+        }
         function calculateScore() {
-            let kills = parseInt(document.getElementById('kills').value) || 0;
-            let placement = parseInt(document.getElementById('placement').value);
-            document.getElementById('resultText').innerText = "Score: " + (kills + placement);
+            let k = parseInt(document.getElementById('kills').value) || 0;
+            let p = parseInt(document.getElementById('placement').value);
+            document.getElementById('resultText').innerText = "Score: " + (k + p);
         }
     </script>
 </body>
