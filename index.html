@@ -3,109 +3,69 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FF ELITE | Scrims & Esports</title>
+    <title>SK PAID SCRIMS | Elite Gaming</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@300;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;800&family=Rajdhani:wght@500;700&display=swap" rel="stylesheet">
 </head>
 <body>
+    <div class="bg-circle"></div>
+    <div class="bg-circle2"></div>
 
     <header>
-        <div class="logo">FF ELITE <span>2026</span></div>
-        <nav>
-            <ul>
-                <li><a href="#scrims">Scrims</a></li>
-                <li><a href="#leaderboard">Standings</a></li>
-                <li><a href="#calculator">Calculator</a></li>
-            </ul>
-        </nav>
+        <div class="logo">SK<span>SCRIMS</span></div>
+        <a href="https://whatsapp.com/channel/0029Vb7oXxA4NVidDg3nC83b" class="nav-join">JOIN CHANNEL</a>
     </header>
 
-    <section class="hero">
-        <div class="hero-content">
-            <h1>FFWS GLOBAL QUALIFIERS</h1>
-            <p>Join the most elite competitive circuit. Follow for daily schedules.</p>
-            <a href="https://whatsapp.com/channel/0029Vb7oXxA4NVidDg3nC83b" class="btn-glow">JOIN WHATSAPP CHANNEL</a>
-        </div>
-    </section>
+    <main>
+        <section class="hero">
+            <h1 class="glitch" data-text="SK PAID SCRIMS">SK PAID SCRIMS</h1>
+            <p>The Ultimate 2026 Competitive Hub</p>
+        </section>
 
-    <section id="scrims" class="container">
-        <h2 class="section-title">Match Schedule</h2>
-        <div class="table-wrapper">
-            <table>
-                <thead>
-                    <tr>
-                        <th>Time</th>
-                        <th>Map</th>
-                        <th>Type</th>
-                        <th>Action</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>07:00 PM</td>
-                        <td>Bermuda</td>
-                        <td>Paid Scrims</td>
-                        <td><a href="https://whatsapp.com/channel/0029Vb7oXxA4NVidDg3nC83b" class="reg-btn">Follow to Join</a></td>
-                    </tr>
-                    <tr>
-                        <td>09:00 PM</td>
-                        <td>Purgatory</td>
-                        <td>Free Scrims</td>
-                        <td><a href="https://whatsapp.com/channel/0029Vb7oXxA4NVidDg3nC83b" class="reg-btn">Follow to Join</a></td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-    </section>
+        <h2 class="section-title">Next Matches</h2>
+        <div class="card-grid">
+            <div class="match-card">
+                <div class="card-tag">LIVE SOON</div>
+                <h3>Bermuda Night</h3>
+                <div class="card-info">
+                    <span>🕒 07:00 PM</span>
+                    <span>💰 ₹500 Pool</span>
+                </div>
+                <a href="https://whatsapp.com/channel/0029Vb7oXxA4NVidDg3nC83b" class="btn-neon">BOOK SLOT</a>
+            </div>
 
-    <section id="calculator" class="container">
-        <h2 class="section-title">Points Calculator (Admin Only)</h2>
-        <div class="calc-box">
-            <input type="number" id="kills" placeholder="Enter Kills">
-            <select id="placement">
-                <option value="12">1st (Booyah) - 12 pts</option>
-                <option value="9">2nd - 9 pts</option>
-                <option value="8">3rd - 8 pts</option>
-                <option value="7">4th - 7 pts</option>
-                <option value="6">5th - 6 pts</option>
-                <option value="1">10th - 1 pt</option>
-                <option value="0">11th-12th - 0 pts</option>
-            </select>
-            <button onclick="calculateScore()" class="btn-glow">Calculate</button>
-            <h3 id="resultText">Total Score: 0</h3>
+            <div class="match-card">
+                <div class="card-tag gold-tag">MEGA EVENT</div>
+                <h3>Purgatory Pro</h3>
+                <div class="card-info">
+                    <span>🕒 09:00 PM</span>
+                    <span>💰 ₹1000 Pool</span>
+                </div>
+                <a href="https://whatsapp.com/channel/0029Vb7oXxA4NVidDg3nC83b" class="btn-neon">BOOK SLOT</a>
+            </div>
         </div>
-    </section>
 
-    <section id="leaderboard" class="container">
-        <h2 class="section-title">🏆 Season Standings</h2>
-        <div class="table-wrapper">
-            <table>
-                <thead>
-                    <tr>
-                        <th>Rank</th>
-                        <th>Team Name</th>
-                        <th>Kills</th>
-                        <th>Total Pts</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr><td class="gold">#1</td><td>Team Elite</td><td>15</td><td>27</td></tr>
-                    <tr><td class="silver">#2</td><td>Viper eSports</td><td>10</td><td>19</td></tr>
-                </tbody>
-            </table>
+        <div class="glass-box">
+            <h2 class="section-title">Quick Points Calc</h2>
+            <div class="calc-row">
+                <input type="number" id="kills" placeholder="Kills">
+                <select id="placement">
+                    <option value="12">#1 Booyah</option>
+                    <option value="9">#2 Rank</option>
+                    <option value="8">#3 Rank</option>
+                    <option value="1">#10 Rank</option>
+                </select>
+            </div>
+            <button onclick="calculateScore()" class="btn-neon wide">CALCULATE</button>
+            <h3 id="resultText">Score: 0</h3>
         </div>
-    </section>
-
-    <footer>
-        <p>&copy; 2026 FF ELITE SCRIMS | Powered by GitHub</p>
-    </footer>
+    </main>
 
     <script>
         function calculateScore() {
             let kills = parseInt(document.getElementById('kills').value) || 0;
             let placement = parseInt(document.getElementById('placement').value);
-            let total = kills + placement;
-            document.getElementById('resultText').innerText = "Total Score: " + total;
+            document.getElementById('resultText').innerText = "Score: " + (kills + placement);
         }
     </script>
 </body>
